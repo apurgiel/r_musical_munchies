@@ -183,11 +183,11 @@ ui <- fluidPage(
 
 
 # make server ------
-server <- function(input, output, session) {
+server <- function(input, output) {
 
 # Create the interactive world map 
 output$map_output <- renderLeaflet({
-  leaflet(code = print(  state.map(input$song_type)))
+  print(  state.map(input$song_type))
   
 })
 
@@ -198,6 +198,6 @@ output$map_output <- renderLeaflet({
 
 
 
-# shiny ----
+# run UI and server ----
 
 shinyApp(ui = ui, server = server)
