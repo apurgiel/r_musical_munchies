@@ -1,0 +1,119 @@
+---
+title: "Leaflet Map"
+author: "Andrew P"
+date: "5/28/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# libraries
+```{r}
+library(leaflet) # fior base map functions
+library(maps) # for mapping state shape files
+library(dplyr)
+
+```
+
+# example of map
+```{r}
+
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+
+m
+```
+
+
+# adding circles with lat and long
+
+```{r}
+df = data.frame(Lat = 1:10, Long = rnorm(10))
+leaflet(df) %>% addTiles() %>%
+  addCircles()
+```
+
+
+
+
+```{r}
+# build example song data matched with state
+row1 <- list('maine', 'happy_me', 'sad_me', 'https://www.google.com/search?q=maine&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsaKg746Ww3lUEMPtBK9AVks66nVCg:1653798826422&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjusNDc8IP4AhXAATQIHf_JCWQQ_AUoA3oECAIQBQ&biw=1280&bih=577&dpr=1.5')
+
+
+row2 <- list('new hampshire', 'happy_nh', 'sad_nh', 'https://www.google.com/search?q=maine&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsaKg746Ww3lUEMPtBK9AVks66nVCg:1653798826422&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjusNDc8IP4AhXAATQIHf_JCWQQ_AUoA3oECAIQBQ&biw=1280&bih=577&dpr=1.5')
+
+
+row3 <- list('colorado', 'happy_co', 'sad_co', 'https://www.google.com/search?q=maine&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsaKg746Ww3lUEMPtBK9AVks66nVCg:1653798826422&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjusNDc8IP4AhXAATQIHf_JCWQQ_AUoA3oECAIQBQ&biw=1280&bih=577&dpr=1.5')
+
+
+song_data <- data.frame(region = character(),    # Create empty data frame
+                        happy = character(),
+                        sad = character(),
+                        link = character())
+song_data[1,] <- row1
+song_data[2,] <- row2
+song_data[3,] <- row3
+
+
+```
+
+
+
+```{r}
+# define shapefile of states containing state names
+mapStates = map("state", fill = TRUE, plot = FALSE)
+
+# some states in the dataset have several regions (identified after a colon)
+# remove these special region names and just make them a duplicate of the state name
+mapStates[['names']] <- mapStates[['names']] %>%
+  lapply(function(x) sub(':.*', '', x)) %>%
+  unlist()
+
+# add an empty element to mapStates list
+mapStates[['state_song']]<- rep(NA, length(mapStates[['names']]))
+mapStates[['song_link']]<- rep(NA, length(mapStates[['names']]))
+
+
+# fill in element with songs matched to the state from which they're from
+for (  i in 1:nrow(song_data)  ){
+mapStates[['state_song']][which(mapStates[['names']] == song_data[["region"]][i])] <- song_data[["happy"]][i]
+
+mapStates[['song_link']][which(mapStates[['names']] == song_data[["region"]][i])] <- song_data[["link"]][i]
+  
+}
+
+
+
+```
+
+
+
+# mapping states
+```{r}
+
+
+# map states with popups that include song data
+leaflet(data = mapStates) %>%
+  addTiles() %>% # add basemap
+  addPolygons(
+    fillColor = topo.colors(10, alpha = NULL), # add colored state polygons
+              stroke = F,
+    # add the name of the state in a popup (name in mapState data)
+    # may need to use htmltools::htmlEscape()
+    # use htmlEscapse to avoid issues with text that could be interpreted
+    # as HTML text
+    popup = ~paste0(
+      'State: ', stringr::str_to_title(names), '<br>',# State Name, uppercased
+      'Songs: ', state_song, '<br>',
+      '<a href = ', song_link, '> Spotify Link </a>')
+                    
+    )
+
+```
+
+
