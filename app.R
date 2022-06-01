@@ -13,7 +13,7 @@ rsconnect::setAccountInfo(name='0makvj-andrew-purgiel',
 # build example song data matched with state ------
 row1 <- list('maine',
              
-             'happy_me', 'https://www.google.com/search?q=maine+happy&rlz=1C1VDKB_enUS988US988&oq=maine+happy&aqs=chrome..69i57j0i512l2j0i22i30j0i15i22i30j0i10i15i22i30j0i22i30l4.3531j0j7&sourceid=chrome&ie=UTF-8',
+             'happy_me', 'https://open.spotify.com/playlist/1WxzwkpO4KkWUjpsWPS1TM?si=77b58924a2774e55',
              
              'cry_me', 'https://www.google.com/search?q=maine+cry&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsaU9lm6hy1uKgI0_CAuHHajUh8sBA%3A1653882961667&ei=UUCUYs-aKIa90PEP0ryo2Ao&ved=0ahUKEwiPh7iTqob4AhWGHjQIHVIeCqsQ4dUDCA4&uact=5&oq=maine+cry&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMggIABCABBDJAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyCwguEIAEEMcBEK8BMgUIABCGAzIFCAAQhgM6BwgAEEcQsAM6BwguELEDEEM6CAgAELEDEJECOgUIABCRAjoFCAAQkgM6CAguEIAEELEDOgsILhDHARCvARCRAjoLCAAQsQMQgwEQkQI6FgguEIAEEIcCELEDEIMBEMcBEK8BEBRKBAhBGABKBAhGGABQyAVY3Qhg0QxoAnABeACAAXGIAcICkgEDMC4zmAEAoAEByAEEwAEB&sclient=gws-wiz'
              )
@@ -146,7 +146,7 @@ leaflet(data = map_data) %>%
 ui <- fluidPage(
 
   # App title
-  titlePanel("Stately Songs"),
+  # titlePanel("Stately Songs"),
   
   # Sidebar layout with input and output definitions
   sidebarLayout(
