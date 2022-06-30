@@ -116,7 +116,7 @@ leaflet(data = map_data) %>%
     # as HTML text
     popup = ~paste0(
       'State: ', stringr::str_to_title(names), '<br>',# State Name, uppercased
-      '<a href = ', link, '> Spotify Link </a>'
+      '<a href = ', link, '> Playlist </a>'
       )
     
   )
