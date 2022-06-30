@@ -13,7 +13,7 @@ rsconnect::setAccountInfo(name='0makvj-andrew-purgiel',
 # build example song data matched with state ------
 row1 <- list('maine',
              
-             'happy_me', 'https://open.spotify.com/playlist/1WxzwkpO4KkWUjpsWPS1TM?si=77b58924a2774e55',
+             'happy_me', 'https://musicalmunchies.com/happy-songs-maine/',
              
              'cry_me', 'https://www.google.com/search?q=maine+cry&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsaU9lm6hy1uKgI0_CAuHHajUh8sBA%3A1653882961667&ei=UUCUYs-aKIa90PEP0ryo2Ao&ved=0ahUKEwiPh7iTqob4AhWGHjQIHVIeCqsQ4dUDCA4&uact=5&oq=maine+cry&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMggIABCABBDJAzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyCwguEIAEEMcBEK8BMgUIABCGAzIFCAAQhgM6BwgAEEcQsAM6BwguELEDEEM6CAgAELEDEJECOgUIABCRAjoFCAAQkgM6CAguEIAEELEDOgsILhDHARCvARCRAjoLCAAQsQMQgwEQkQI6FgguEIAEEIcCELEDEIMBEMcBEK8BEBRKBAhBGABKBAhGGABQyAVY3Qhg0QxoAnABeACAAXGIAcICkgEDMC4zmAEAoAEByAEEwAEB&sclient=gws-wiz'
              )
@@ -91,9 +91,7 @@ for (  i in 1:nrow(song_data)  ){
 
 # mapping function -----
 
-# define test input variables
-song_type <- 'cry'
-rm(song_type)
+
 
 # define function
 state.map <- function(
@@ -157,7 +155,7 @@ ui <- fluidPage(
       # First input: Type of data
       selectInput(inputId = "song_type",
                   label = "Choose the type of song you want to see:",
-                  choices = list("happy" = "happy", "cry" = "cry")
+                  choices = list("Puts You in a Good Mood" = "happy", "Likely to Make You Cry" = "cry")
       )
       
     ),
