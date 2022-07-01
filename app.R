@@ -19,9 +19,9 @@ row1 <- list('maine',
              )
 
 
-row2 <- list('new hampshire',
+row2 <- list('michigan',
              
-             'https://www.google.com/search?q=new+hampshire+happy&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsZ6laoC35zNCNJtMQHxYOeRhXioZA%3A1653883067144&ei=u0CUYrSwCJ6Q0PEPsqyF4Ac&ved=0ahUKEwj0-d3Fqob4AhUeCDQIHTJWAXwQ4dUDCA4&uact=5&oq=new+hampshire+happy&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgYIABAeEBYyCAgAEB4QDxAWMgYIABAeEBYyCAgAEB4QDxAWMgYIABAeEBYyBQgAEIYDMgUIABCGAzIFCAAQhgM6BwgAEEcQsAM6BQgAEJECOgsILhDHARDRAxCRAjoICAAQgAQQyQM6CwguEIAEEMcBEK8BOgUILhCABDoICAAQHhAWEApKBAhBGABKBAhGGABQ6AJY5AdgwgtoAnABeACAAYwBiAHQA5IBAzQuMZgBAKABAcgBCMABAQ&sclient=gws-wiz',
+             'https://musicalmunchies.com/good-mood-michigan/',
              
              'https://www.google.com/search?q=new+hampshire+cry&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsbvLlG_ccmdbdDfEcz4vOyqfI0FzA%3A1653882998394&ei=dkCUYtvYF5-s0PEPupyF0As&ved=0ahUKEwjb6_mkqob4AhUfFjQIHTpOAboQ4dUDCA4&uact=5&oq=new+hampshire+cry&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDILCC4QgAQQxwEQrwEyBQgAEIAEOggIABCABBCwAzoHCAAQHhCwAzoJCAAQHhCwAxAFOgYIABAeEAc6CAgAEIAEELEDOggIABAeEAgQBzoKCAAQHhAPEAcQCjoKCC4QsQMQgwEQDToECAAQDToHCC4QsQMQDToKCAAQsQMQgwEQDToKCC4QxwEQrwEQDToGCAAQHhANSgQIQRgBSgQIRhgAUMkDWNMVYNQbaAJwAHgAgAFmiAHfCJIBBDExLjKYAQCgAQHIAQrAAQE&sclient=gws-wiz'
              )
@@ -29,9 +29,8 @@ row2 <- list('new hampshire',
 
 row3 <- list('colorado',
              
-             'https://www.google.com/search?q=colorado+happy&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsaIUJIpJMwiuvqy-vEdESopDltt-w%3A1653883108979&ei=5ECUYvCvO5yw0PEPuLyigAw&ved=0ahUKEwjwsdfZqob4AhUcGDQIHTieCMAQ4dUDCA4&uact=5&oq=colorado+happy&gs_lcp=Cgdnd3Mtd2l6EAMyBggAEB4QBzIGCAAQHhAHMgYIABAeEAcyBggAEB4QBzIGCAAQHhAHMgUIABCABDIGCAAQHhAHMgYIABAeEAcyBggAEB4QBzIFCAAQgAQ6CAguEIAEENQCOgQIABANSgQIQRgASgQIRhgAUABYkwhgtgxoAHABeACAAbYBiAG_BpIBAzYuMpgBAKABAcABAQ&sclient=gws-wiz',
-             
-             'https://www.google.com/search?q=colorado+cry&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsY6NL3iIyEq4Xbh-9kSfKLpyvz_qw%3A1653883145549&ei=CUGUYquEIaT59APYnIXgDA&ved=0ahUKEwjrrI_rqob4AhWkPH0KHVhOAcwQ4dUDCA4&uact=5&oq=colorado+cry&gs_lcp=Cgdnd3Mtd2l6EAMyCwguEIAEEMcBEK8BMgUIABCABDIFCAAQgAQyBQgAEIAEMggIABCABBDJAzIFCAAQgAQyBQgAEIAEMgsILhCABBDHARCvATILCC4QgAQQxwEQrwEyBQgAEIAEOgcIABBHELADOggILhCABBCxAzoFCC4QgAQ6CAgAEIAEELEDOg4ILhCABBDHARCvARDUAjoLCC4QgAQQsQMQgwE6CggAEIAEEIcCEBQ6CwgAEIAEELEDEIMBSgQIQRgASgQIRhgAUPkCWMYGYMcJaAJwAXgAgAF1iAHBApIBAzEuMpgBAKABAcgBCMABAQ&sclient=gws-wiz'
+            'https://musicalmunchies.com/good-mood-colorado/',
+            'https://www.google.com/search?q=colorado+cry&rlz=1C1VDKB_enUS988US988&sxsrf=ALiCzsY6NL3iIyEq4Xbh-9kSfKLpyvz_qw%3A1653883145549&ei=CUGUYquEIaT59APYnIXgDA&ved=0ahUKEwjrrI_rqob4AhWkPH0KHVhOAcwQ4dUDCA4&uact=5&oq=colorado+cry&gs_lcp=Cgdnd3Mtd2l6EAMyCwguEIAEEMcBEK8BMgUIABCABDIFCAAQgAQyBQgAEIAEMggIABCABBDJAzIFCAAQgAQyBQgAEIAEMgsILhCABBDHARCvATILCC4QgAQQxwEQrwEyBQgAEIAEOgcIABBHELADOggILhCABBCxAzoFCC4QgAQ6CAgAEIAEELEDOg4ILhCABBDHARCvARDUAjoLCC4QgAQQsQMQgwE6CggAEIAEEIcCEBQ6CwgAEIAEELEDEIMBSgQIQRgASgQIRhgAUPkCWMYGYMcJaAJwAXgAgAF1iAHBApIBAzEuMpgBAKABAcgBCMABAQ&sclient=gws-wiz'
              )
 
 
