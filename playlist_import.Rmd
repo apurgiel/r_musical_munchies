@@ -40,7 +40,7 @@ all <- read_csv('./responses.csv') %>%
     
     # pick these two columns and rename
     all %>% select(    timestamp,   all_of(song_col), all_of(artist_col)) %>%
-      rename(song = 1, artist = 2)
+      rename(song = 2, artist = 3)
   }
   
   # create dataframes
