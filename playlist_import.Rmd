@@ -1,0 +1,70 @@
+---
+title: "csv_clean"
+author: "Andrew P"
+date: '2022-08-17'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+
+```
+
+# import response data from csv
+```{r}
+all <- read_csv('./responses.csv') %>%
+  rename(timestamp = Timestamp)
+
+
+```
+
+# separate data into individual playlist dataframes
+
+```{r}
+
+# make function to separate playlists
+  # and extract this column (song name) and next column (artist)
+  get.playlist <- function(
+    pl_type # playlist type (from words in survey prompt)
+                           ) {
+    
+    # identify which column has text string in it (song)
+    song_col <- which(   grepl(   pl_type, colnames(all)  )  )
+    # identify next column as well (artist)
+    artist_col <- song_col + 1
+    
+    # pick these two columns and rename
+    all %>% select(    timestamp,   all_of(song_col), all_of(artist_col)) %>%
+      rename(song = 1, artist = 2)
+  }
+  
+  # create dataframes
+  good_mood <- get.playlist('good mood')
+  nostalgia <- get.playlist('nostalgia')
+  cry <- get.playlist('cry')
+  favorite <- get.playlist('all-time favorite')
+  
+```
+
+
+# make playlist csvs
+```{r}
+# makes function that creates csv named based on playlist variable name
+playlist.write <- function(pl_name) {
+  write_csv(get(pl_name),paste0('playlists/', pl_name, '.csv'))
+}
+
+# create csvs
+playlist.write('good_mood')
+playlist.write('nostalgia')
+playlist.write('cry')
+playlist.write('favorite')
+
+```
+
+
