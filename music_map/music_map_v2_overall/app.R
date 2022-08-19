@@ -88,7 +88,8 @@ song_map <-
     # as HTML text
     popup = ~paste0(
       'State: ', stringr::str_to_title(names), '<br>',# State Name, uppercased
-      '<a window.top.location.href = ', link, '> Playlist </a>'
+      '<a href = ', link, '> Playlist </a>'
+      
       )
     
   )
