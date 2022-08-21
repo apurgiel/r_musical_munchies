@@ -111,6 +111,9 @@ ui <- fluidPage(
     # Main panel for displaying outputs
     mainPanel(
       
+      #allow link to open outside of iframe
+      # tags$head(tags$base(target="_top")),
+      
       # Hide errors
       tags$style(type = "text/css",
                  ".shiny-output-error { visibility: hidden; }",
