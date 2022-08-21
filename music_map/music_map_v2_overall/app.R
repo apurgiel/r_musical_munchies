@@ -10,35 +10,6 @@ rsconnect::setAccountInfo(name='0makvj-andrew-purgiel',
 
 
 
-# build example song data matched with state ------
-row1 <- list('maine',
-             'https://musicalmunchies.com/home/playlists-by-location/'
-                          )
-
-
-row2 <- list('michigan', 
-             'https://musicalmunchies.com/michigan/'
-             )
-
-
-row3 <- list('colorado',
-            'https://musicalmunchies.com/colorado/'
-             )
-
-row4 <- list('alabama',
-             'https://musicalmunchies.com/home/playlists-by-location/#al'
-)
-
-song_data <- data.frame(region = character(),    # Create empty data frame
-                        link = character())
-
-song_data[1,] <- row1
-song_data[2,] <- row2
-song_data[3,] <- row3
-song_data[4,] <- row4
-
-# ----
-
 
 
 
@@ -46,8 +17,6 @@ song_data[4,] <- row4
 states <- bind_cols(region = state.name, abb = state.abb) %>%
   mutate(region = tolower(region), abb = tolower(abb))
 # ----
-
-
 
 
 # define shapefile of states containing state names ---------
@@ -63,10 +32,10 @@ mapStates[['names']] <- mapStates[['names']] %>%
 mapStates[['link']]<- rep(NA, length(mapStates[['names']]))
 
 
-# fill in element with songs matched to the state from which they're from
-for (  i in 1:nrow(song_data)  ){
+# fill in element with state abbreviations
+for (  i in 1:nrow(states)  ){
 
-  mapStates[['link']][which(mapStates[['names']] == song_data[["region"]][i])] <- song_data[["link"]][i]
+  mapStates[['link']][which(mapStates[['names']] == states[["region"]][i])] <- states[["abb"]][i]
  
 }
 
@@ -94,7 +63,8 @@ song_map <-
     # as HTML text
     popup = ~paste0(
       'State: ', stringr::str_to_title(names), '<br>',# State Name, uppercased
-      '<a href = ', link, '> Playlist </a>'
+      '<a href = https://musicalmunchies.com/home/playlists-by-location/#',
+      link, '> Playlist </a>'
       
       )
     
