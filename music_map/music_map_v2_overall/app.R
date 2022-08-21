@@ -12,7 +12,7 @@ rsconnect::setAccountInfo(name='0makvj-andrew-purgiel',
 
 # build example song data matched with state ------
 row1 <- list('maine',
-             'https://musicalmunchies.com/maine/'
+             'https://musicalmunchies.com/home/playlists-by-location/'
                           )
 
 
@@ -25,12 +25,18 @@ row3 <- list('colorado',
             'https://musicalmunchies.com/colorado/'
              )
 
+row4 <- list('alabama',
+             'https://musicalmunchies.com/home/playlists-by-location/#al'
+)
 
 song_data <- data.frame(region = character(),    # Create empty data frame
                         link = character())
 
 song_data[1,] <- row1
 song_data[2,] <- row2
+song_data[3,] <- row3
+song_data[4,] <- row4
+
 # ----
 
 
@@ -112,7 +118,7 @@ ui <- fluidPage(
     mainPanel(
       
       #allow link to open outside of iframe
-      # tags$head(tags$base(target="_top")),
+      tags$head(tags$base(target="_top")),
       
       # Hide errors
       tags$style(type = "text/css",
